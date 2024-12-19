@@ -1,0 +1,213 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts-3by.pages.dev/overpass-v16-latin/overpass-v16-latin-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-display: swap;
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts-3by.pages.dev/overpass-v16-latin/overpass-v16-latin-700.woff2') format('woff2');
+ }
+
+
+:root {
+  /* Colors */
+  --Orange: hsl(25, 97%, 53%);
+  --Heading-text: hsl(0, 0%, 100%);
+  --Description-text: hsl(217, 12%, 63%);
+  --Card-color: hsl(213, 19%, 18%);
+  --Background-color: hsl(216, 12%, 8%);
+
+  /* Font  */
+  /* Font family  */
+  --ff:'Overpass';
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--Background-color);
+  display: grid;
+  font-family: var(--ff), sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+
+.card {
+  min-width: 300px;
+  max-width: 400px;
+  height: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--Card-color);
+  border-radius: 25px;
+  place-self: center;
+  margin-top: 20vh;
+  margin-inline: 20px;
+}
+.centered{
+  text-align: center;
+  margin: auto;
+}
+.rating{
+  display: flex;
+}
+.thanks{
+  display: none;
+}
+
+
+.star {
+  padding: 15px;
+  width: fit-content;
+  background-color: hsl(213, 17%, 23%);
+  border-radius: 50%;
+}
+img {
+  width: 15px;
+}
+
+.heading {
+  font-size: 28px;
+  color: var(--Heading-text);
+}
+
+.description {
+  font-size: 16px;
+  color: var(--Description-text);
+}
+
+.rating-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-block: 10px ;
+}
+
+input[type="radio"]{
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height:0;
+}
+label{
+  display: inline-block;
+  background-color: hsl(213, 17%, 23%);
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  text-align: center;
+  line-height: 55px;
+  color: whitesmoke;
+  /* margin: 5px; */
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+label:hover{
+  background-color: var(--Orange);
+  color: var(--Card-color);
+}
+
+
+input[type="radio"]:checked + label {
+  background-color: white;
+  color: var(--Card-color);
+} 
+
+.submit-btn {
+  border-radius: 25px;
+  background-color: var(--Orange);
+  padding-block: 10px;
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--Background-color);
+  border-style: solid;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.submit-btn:hover {
+  background-color: white;
+}
+
+/* thanks card */
+.thanks{
+padding-block: 40px;
+}
+.thanks img{
+  width: 150px;
+}
+
+.thanks .user-rating{
+  color: var(--Orange);
+  background-color:hsl(213, 17%, 23%);
+  border-radius: 25px;
+  padding:5px 15px;
+  margin-top: 10px;
+}
+
